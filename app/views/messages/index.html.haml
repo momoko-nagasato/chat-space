@@ -1,0 +1,41 @@
+!!!
+%html
+  %head
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  %body
+    .chat-side
+      .side-header
+        %p.side-header__user-name なまえ
+        %ul.user-menu
+          %li.user-menu__new-group
+            %a{ href: 'http://google.co.jp' }
+              %i.fa.fa-edit
+          %li.user-menu__edit-user
+            %a{ href: 'http://google.co.jp' }
+              %i.fa.fa-cog
+      .groups
+        .group
+          %p.group__group-name グループ名
+          %p.group__latest-message 最近のトーク
+    .chat-main
+      .main-header
+        .current-group
+          %h2.current-group__name グループ名
+          %ul.member-list
+            Member：
+            %li.member-list__member A子
+        %a{ href: 'http://google.co.jp' }
+          .main-header__edit-btn Edit
+      .messages
+        .message
+          .upper-info
+            %p.upper-info-user なまえ
+            %p.upper-info-data yyyy/mm/dd(w) 00:00:00
+          %p.message__text こんばんは！
+      .form
+        .input-box
+          %input.input-box__text{type: "text", placeholder: "type a message", name: "message[content]"}
+          %label.image-label
+            %i.fa.fa-image
+            %input.image-label__input{type: "file", name: "message[image]"}
+        %input.new-message__submit-btn{type: "submit", value: "Send"}
