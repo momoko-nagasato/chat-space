@@ -8,10 +8,10 @@
         %p.side-header__user-name なまえ
         %ul.user-menu
           %li.user-menu__new-group
-            %a{ href: 'http://google.co.jp' }
+            = link_to 'http://google.co.jp' do
               %i.fa.fa-edit
           %li.user-menu__edit-user
-            %a{ href: 'http://google.co.jp' }
+            = link_to 'http://google.co.jp' do
               %i.fa.fa-cog
       .groups
         .group
@@ -24,7 +24,7 @@
           %ul.member-list
             Member：
             %li.member-list__member A子
-        %a{ href: 'http://google.co.jp' }
+        = link_to 'http://google.co.jp' do
           .main-header__edit-btn Edit
       .messages
         .message
