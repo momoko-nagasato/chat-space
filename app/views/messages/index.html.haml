@@ -1,39 +1,36 @@
-!!!
-%html
-  %body
-    .chat-side
-      .side-header
-        %p.side-header__user-name なまえ
-        %ul.user-menu
-          %li.user-menu__new-group
-            = link_to 'http://google.co.jp' do
-              %i.fa.fa-edit
-          %li.user-menu__edit-user
-            = link_to 'http://google.co.jp' do
-              %i.fa.fa-cog
-      .groups
-        .group
-          %p.group__group-name グループ名
-          %p.group__latest-message 最近のトーク
-    .chat-main
-      .main-header
-        .current-group
-          %h2.current-group__name グループ名
-          %ul.member-list
-            Member：
-            %li.member-list__member A子
+.chat-side
+  .side-header
+    %p.side-header__user-name なまえ
+    %ul.user-menu
+      %li.user-menu__new-group
         = link_to 'http://google.co.jp' do
-          .main-header__edit-btn Edit
-      .messages
-        .message
-          .upper-info
-            %p.upper-info-user なまえ
-            %p.upper-info-data yyyy/mm/dd(w) 00:00:00
-          %p.message__text こんばんは！
-      .form
-        .input-box
-          %input.input-box__text{type: "text", placeholder: "type a message", name: "message[content]"}
-          %label.image-label
-            %i.fa.fa-image
-            %input.image-label__input{type: "file", name: "message[image]"}
-        %input.new-message__submit-btn{type: "submit", value: "Send"}
+          %i.fa.fa-edit
+      %li.user-menu__edit-user
+        = link_to 'http://google.co.jp' do
+          %i.fa.fa-cog
+  .groups
+    .group
+      %p.group__group-name グループ名
+      %p.group__latest-message 最近のトーク
+.chat-main
+  .main-header
+    .current-group
+      %h2.current-group__name グループ名
+      %ul.member-list
+        Member：
+        %li.member-list__member A子
+    = link_to 'http://google.co.jp' do
+      .main-header__edit-btn Edit
+  .messages
+    .message
+      .upper-info
+        %p.upper-info-user なまえ
+        %p.upper-info-data yyyy/mm/dd(w) 00:00:00
+      %p.message__text こんばんは！
+  .form
+    .input-box
+      %input.input-box__text{type: "text", placeholder: "type a message", name: "message[content]"}
+      %label.image-label
+        %i.fa.fa-image
+        %input.image-label__input{type: "file", name: "message[image]"}
+    %input.new-message__submit-btn{type: "submit", value: "Send"}
