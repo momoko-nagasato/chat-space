@@ -9,9 +9,7 @@
         = link_to 'http://google.co.jp' do
           %i.fa.fa-cog
   .groups
-    .group
-      %p.group__group-name グループ名
-      %p.group__latest-message 最近のトーク
+    = render "group"
 .chat-main
   .main-header
     .current-group
