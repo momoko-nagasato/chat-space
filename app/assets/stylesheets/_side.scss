@@ -14,9 +14,9 @@
     justify-content: space-between;
     &__user-name {
       color: $main-color;
-      .user-menu {
-        display: flex;
-      }
+    .user-menu {
+      display: list-item;
+    }
     }
   }
 }
