@@ -14,10 +14,14 @@
     justify-content: space-between;
     &__user-name {
       color: $main-color;
-    .user-menu {
-      display: list-item;
     }
-    }
+  }
+}
+
+.user-menu {
+  display: flex;
+  &__edit-user {
+    margin-left: 0.3rem;
   }
 }
 
