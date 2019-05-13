@@ -1,9 +1,9 @@
 @import "./reset";
-@import "./variable";
+@import "config/variable";
 @import "font-awesome";
 @import "./mixin";
 @import "./side";
 @import "./main";
-@import "./user";
+@import "modules/user";
 
 
