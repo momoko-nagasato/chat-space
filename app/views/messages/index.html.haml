@@ -1,32 +1,22 @@
-//必要あれば、chat-sideテンプレにする
-.chat-side
-  .side-header
-    %p.side-header__user-name
-      = current_user.name
-    %ul.user-menu
-      %li.user-menu__new-group
-        = link_to new_group_path do
-          %i.fa.fa-edit
-      %li.user-menu__edit-user
-        = link_to edit_user_path(current_user) do
-          %i.fa.fa-cog
-  .groups
-    = render "group"
-.chat-main
-  .main-header
-    .current-group
-      %h2.current-group__name グループ名
-      %ul.member-list
-        Member：
-        %li.member-list__member A子
-    = link_to 'http://google.co.jp' do
-      .main-header__edit-btn Edit
-  .messages
-    = render "message"
-  .form
-    .input-box
-      %input.input-box__text{type: "text", placeholder: "type a message", name: "message[content]"}
-      %label.image-label
-        %i.fa.fa-image
-        %input.image-label__input{type: "file", name: "message[image]"}
-    %input.new-message__submit-btn{type: "submit", value: "Send"}
+.wrapper
+
+  = render 'side_bar'
+
+  .chat-main
+    .main-header
+      .current-group
+        %h2.current-group__name グループ名
+        %ul.member-list
+          Member：
+          %li.member-list__member A子
+      = link_to 'http://google.co.jp' do
+        .main-header__edit-btn Edit
+    .messages
+      = render "message"
+    .form
+      .input-box
+        %input.input-box__text{type: "text", placeholder: "type a message", name: "message[content]"}
+        %label.image-label
+          %i.fa.fa-image
+          %input.image-label__input{type: "file", name: "message[image]"}
+      %input.new-message__submit-btn{type: "submit", value: "Send"}
