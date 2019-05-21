@@ -17,7 +17,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
+|content|string|null: false|
 |image|string|-|
 |group-id|integer|null: false|
 |user-id|integer|null: false|
