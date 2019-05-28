@@ -1,5 +1,11 @@
 .message
   .upper-info
-    %p.upper-info-user なまえ
-    %p.upper-info-data yyyy/mm/dd(w) 00:00:00
-  %p.message__text こんばんは！
+    %p.upper-info-user
+      = message.user.name
+    %p.upper-info-data
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
+  %p.message__text
+    - if message.content.present?
+      %p.lower-message__content
+        = message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
