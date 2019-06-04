@@ -13,7 +13,10 @@ class MessagesController < ApplicationController
   def create
     @message = @group.messages.new(message_params)
     if @message.save
-      redirect_to group_messages_path(@group), notice: 'メッセージが送信されました'
+      respond_to do |format|
+      format.html { redirect_to "group_messages_path(params[:group_id])"}
+      format.json
+      end
     else
       @messages = @group.messages.includes(:user)
       flash.now[:alert] = 'メッセーシを入力してください。'
@@ -22,13 +25,14 @@ class MessagesController < ApplicationController
   end
 
   private
-
   def message_params
     params.require(:message).permit(:content, :image).merge(user_id: current_user.id)
   end
 
   def set_group
     @group = Group.find(params[:group_id])
+    @users = @group.users
+    Time.zone ='Tokyo'
   end
 
 end
