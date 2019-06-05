@@ -37,8 +37,8 @@ $(document).on('turbolinks:load', function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html);
-      $('#message_content').val('');
-      $(".messages").animate({ scrollTop: $(".messages")[0].scrollHeight }, 500);
+      $('#new_message')[0].reset();
+      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight }, 500);
     })
     .fail(function(data){
       alert('エラーが発生したためメッセージは送信できませんでした。');
