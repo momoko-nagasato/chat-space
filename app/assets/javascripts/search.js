@@ -9,6 +9,11 @@ $(document).on('turbolinks:load', function(){
     search_list.append(html);
   };
 
+  function appendNoUser(user) {
+    var html = ``
+    search_list.append(html);
+  };
+
 
   $("#user-search-field").on("keyup", function() {
     var input = $("#user-search-field").val();
@@ -30,5 +35,8 @@ $(document).on('turbolinks:load', function(){
         appendNoUser("一致するユーザーはいません")
       }
     })
+    .fail(function() {
+      alert('ユーザー検索に失敗しました')
+    });
   });
 });
