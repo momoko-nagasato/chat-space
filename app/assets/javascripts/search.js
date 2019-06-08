@@ -34,8 +34,8 @@ $(document).on('turbolinks:load', function() {
     .done(function(users) {
       $(".user-search-result").empty();
       if (users.length !== 0 && input.length !== 0) {
-        users.forEach(function(users) {
-          appendUser(users);
+        users.forEach(function(user) {
+          appendUser(user);
         });
       } else {
         appendNoUser("一致するユーザーはいません")
@@ -46,6 +46,8 @@ $(document).on('turbolinks:load', function() {
     });
   });
 
+
+  //グループに追加したユーザーは表示しない
   $(".user-search-result").on('click','.user-search-add', function() {
     var id = $(this).data('user-id');
     var name = $(this).data('user-name');
