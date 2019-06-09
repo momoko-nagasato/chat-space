@@ -22,6 +22,7 @@ $(document).on('turbolinks:load', function(){
                 </div>`
   return html;
   }
+  
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var message = new FormData(this);
@@ -47,5 +48,29 @@ $(document).on('turbolinks:load', function(){
       $('.form__submit').prop('disabled', false);
     })
   })
+
+  var reloadMessages = function () {
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){
+      var lastMessageId = $('.message').last().data('id');
+      $.ajax({
+        url: "api/messages",
+        type: 'get',
+        dataType: 'json',
+        data: {id: lastMessageId}
+      })
+      .done(function (messages) {
+        var insertHTML = '';
+        messages.forEach(function (message) {
+          insertHTML = buildHTML(message);
+          $('.messages').append(insertHTML);
+        })
+        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 500);
+      })
+      .fail(function () {
+        alert('自動更新に失敗しました');
+      });
+    }
+  };
+  setInterval(reloadMessages, 5000);
 });
 
