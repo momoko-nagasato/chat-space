@@ -51,12 +51,12 @@ $(document).on('turbolinks:load', function(){
 
   var reloadMessages = function () {
     if (window.location.href.match(/\/groups\/\d+\/messages/)){
-      var last_message_id = $('.message').last().data('id');
+      var lastMessageId = $('.message').last().data('id');
       $.ajax({
         url: "api/messages",
         type: 'get',
         dataType: 'json',
-        data: {id: last_message_id}
+        data: {id: lastMessageId}
       })
       .done(function (messages) {
         var insertHTML = '';
