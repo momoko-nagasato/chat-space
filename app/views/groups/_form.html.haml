@@ -31,8 +31,8 @@
           = f.hidden_field :user_ids, name: "group[user_ids][]", value: current_user.id
           .chat-group-user.clearfix#chat-group-user-
             %p.chat-group-user__name
-              -# = current_user.name
-              .user-search-result
+              = current_user.name
+          .chat-group-users
               
         -# #add-user-list
 
