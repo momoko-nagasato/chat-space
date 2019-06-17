@@ -8,6 +8,12 @@ $(document).on('turbolinks:load', function() {
                 </div>`
     search_list.append(html);
   };
+
+
+  function appendNoUser(user) {
+    var html = ``
+    search_list.append(html);
+  };
   
   function buildHTML(id, name) {
     var html = `<div class="chat-group-user clearfix" id=chat-group-user-${id}>
@@ -32,7 +38,9 @@ $(document).on('turbolinks:load', function() {
         users.forEach(function(user) {
           appendUser(user);
         });
-      } 
+      } else {
+        appendNoUser("一致するユーザーはいません")
+      }
     })
     .fail(function() {
       alert('ユーザー検索に失敗しました')
@@ -49,23 +57,23 @@ $(document).on('turbolinks:load', function() {
 
 
 
-  //kokokara
-    // 追加ユーザーリスト作成
-    function addUser(user_id, user_name) {
-      var html = `<div class='chat-group-user clearfix' id='chat-group-user-8'>
-                    <input name='group[user_ids][]' type='hidden' value='${user_id}'>
-                      <p class='chat-group-user__name'>${user_name}</p>
-                      <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
-                  </div>`
-      $('#chat-group-users').append(html);
-    }
-    // 追加ボタンクリック時の処理
-    $('#user-search-result').on('click', '.chat-group-user__btn--add', function () {
-      var user_id = $(this).data('user-id');
-      var user_name = $(this).data('user-name');
-      addUser(user_id, user_name);
-      $(this).parent().remove();
-    });
+  // //kokokara
+  //   // 追加ユーザーリスト作成
+  //   function addUser(user_id, user_name) {
+  //     var html = `<div class='chat-group-user clearfix' id='chat-group-user-8'>
+  //                   <input name='group[user_ids][]' type='hidden' value='${user_id}'>
+  //                     <p class='chat-group-user__name'>${user_name}</p>
+  //                     <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
+  //                 </div>`
+  //     $('#chat-group-users').append(html);
+  //   }
+  //   // 追加ボタンクリック時の処理
+  //   $('#user-search-result').on('click', '.chat-group-user__btn--add', function () {
+  //     var user_id = $(this).data('user-id');
+  //     var user_name = $(this).data('user-name');
+  //     addUser(user_id, user_name);
+  //     $(this).parent().remove();
+  //   });
     //ここまでコピ
 
 
