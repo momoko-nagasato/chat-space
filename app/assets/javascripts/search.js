@@ -1,7 +1,7 @@
 
 $(document).on('turbolinks:load', function() {
   var search_list = $(".user-search-result");
-  var search_list = $(".user-search-result");
+  // var search_list = $(".user-search-result");
 
 
   function appendUser(user) {
@@ -41,9 +41,9 @@ $(document).on('turbolinks:load', function() {
         users.forEach(function(user) {
           appendUser(user);
 // //なんか追加
-//           $(".user-search-result").on("click", `#${id}`, function() {
-//             appendUser(user);
-//           });
+          $(".user-search-result").on("click", `#${id}`, function() {
+            appendUser(user);
+          });
 //           //なんか追加
         });
       } else {
