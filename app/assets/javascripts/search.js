@@ -9,12 +9,6 @@ $(document).on('turbolinks:load', function() {
     search_list.append(html);
   };
 
-
-  // function appendNoUser(user) {
-  //   var html = ``
-  //   search_list.append(html);
-  // };
-  
   function buildHTML(id, name) {
     var html = `<div class="chat-group-user clearfix" id=chat-group-user-${id}>
                   <input type="hidden" name="group[user_ids][]" value="${id}">
@@ -38,9 +32,7 @@ $(document).on('turbolinks:load', function() {
         users.forEach(function(user) {
           appendUser(user);
         });
-      } else {
-        appendNoUser("一致するユーザーはいません")
-      }
+      } 
     })
     .fail(function() {
       alert('ユーザー検索に失敗しました')
