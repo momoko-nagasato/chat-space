@@ -1,6 +1,7 @@
 $(document).on('turbolinks:load', function() {
   var search_list = $(".user-search-result");
 
+
   function appendUser(user) {
     var html = `<div class='chat-group-user clearfix' >
                   <p class='chat-group-user__name'>${user.name}</p>
@@ -9,6 +10,7 @@ $(document).on('turbolinks:load', function() {
     search_list.append(html);
   };
 
+//追加後全ユーザー表示
   function buildHTML(id, name) {
     var html = `<div class="chat-group-user clearfix" id=chat-group-user-${id}>
                   <input type="hidden" name="group[user_ids][]" value="${id}">
@@ -16,6 +18,7 @@ $(document).on('turbolinks:load', function() {
                   <a class="user-search-remove chat-group-user__btn chat-group-user__btn--remove" data-user-id="${id}">削除</a>
                 </div>`
     return html
+
   }
 
   $("#user-search-field").on("keyup", function() {
