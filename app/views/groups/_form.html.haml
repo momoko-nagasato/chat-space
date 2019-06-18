@@ -29,9 +29,9 @@
             = hidden_field_tag "group[user_ids][]", user.id
             %p.chat-group-user__name #{user.name}
             - if current_user.name == user.name
-              .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn
+              .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove
             - else
-              .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
+              .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove 
 
 
   .chat-group-form__field.clearfix

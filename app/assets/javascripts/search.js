@@ -50,8 +50,8 @@ $(document).on('turbolinks:load', function() {
     $(this).parent('.chat-group-user').remove();
   });
 
-  $(".chat-group-users").on('click', '.user-search-remove', function() {
-    var id = $(this).data('user-id');
-    $(`#chat-group-user-${id}`).remove();
-  });
+  $('.chat-group-users').on('click', '.user-search-remove', function(){ //削除ボタンの機能
+    $(this).parent().remove(); //クリックした子要素と親要素を削除
+  })
+
 });
