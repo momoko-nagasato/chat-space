@@ -40,11 +40,11 @@ $(document).on('turbolinks:load', function() {
       if (users.length !== 0 && input.length !== 0) {
         users.forEach(function(user) {
           appendUser(user);
-//なんか追加
-          $(".user-search-result").on("click", `#${id}`, function() {
-            appendUser(user);
-          });
-          //なんか追加
+// //なんか追加
+//           $(".user-search-result").on("click", `#${id}`, function() {
+//             appendUser(user);
+//           });
+//           //なんか追加
         });
       } else {
         appendNoUser("一致するユーザーはいません")
