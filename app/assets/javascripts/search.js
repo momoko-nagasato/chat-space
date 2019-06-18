@@ -1,6 +1,8 @@
 
 $(document).on('turbolinks:load', function() {
   var search_list = $(".user-search-result");
+  var search_list = $(".user-search-result");
+
 
   function appendUser(user) {
     var html = `<div class='chat-group-user clearfix' >
@@ -38,6 +40,11 @@ $(document).on('turbolinks:load', function() {
       if (users.length !== 0 && input.length !== 0) {
         users.forEach(function(user) {
           appendUser(user);
+//なんか追加
+          $(".user-search-result").on("click", `#${user.id}`, function() {
+            appendUser(user);
+          });
+          //なんか追加
         });
       } else {
         appendNoUser("一致するユーザーはいません")
